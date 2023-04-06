@@ -12,16 +12,29 @@ const password = document.querySelector('#last-password') // password input
 
 // eventListener submit
 form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    
-    form.forEach((input) => {
-        console.log(input)
-        if (input.value) {
-            return
-        } else {
-            console.log(input + ' non rempli')
-            return
-        }
 
-    })
+    event.preventDefault();
+    // firstname
+    if (firstname.value) {
+        console.log('le prénom est rempli')
+    } else {
+        console.error('le prénom est manquant')
+    }
+    // lastname
+    if (lastname.value) {
+        console.log('le nom est rempli')
+    } else {
+        console.error('le nom est manquant')
+    }
+    // email
+    if (email.value) {
+        console.log('le mail est rempli')
+    } else { 
+        console.error('le mail est manquant')
+    }
+    if (password.value) {
+        console.log('le mdp est rempli')
+    } else {
+        console.error('le mdp est manquant')
+    }
 })
