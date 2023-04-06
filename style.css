@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    text-decoration: none;
 }
 html,
 body {
@@ -35,7 +35,7 @@ button {
     background: hsl(248, 32%, 49%);
     box-shadow: hsl(248, 32%, 49%) 0 2px 2px;
 }
-.try em {
+.try a {
     font-weight: 700;
 }
 .success {
