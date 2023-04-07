@@ -86,3 +86,6 @@ label {
     color: hsl(0, 100%, 74%);
     font-weight: 600;
 }
+.error-message {
+    color: hsl(0, 100%, 74%);
+}

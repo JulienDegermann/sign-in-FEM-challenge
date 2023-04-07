@@ -10,13 +10,17 @@ const lastname = document.querySelector('#last-name') // last-name input
 const email = document.querySelector('#email') // email input
 const password = document.querySelector('#last-password') // password input
 
+
+
 // eventListener submit
 form.addEventListener("submit", (event) => {
-
     event.preventDefault();
     // firstname
-    if (firstname.value) {
-        console.log('le prénom est rempli')
+    if (!firstname.value) {
+        let error = document.createElement('p')
+        error.innerText = `Le champ ${firstname.name} doit être rempli`
+        error.classList.add('error-message')
+        firstname.parentNode.append(error)
     } else {
         console.error('le prénom est manquant')
     }
