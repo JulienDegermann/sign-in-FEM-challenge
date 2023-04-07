@@ -11,7 +11,23 @@ const email = document.querySelector('#email') // email input
 const password = document.querySelector('#last-password') // password input
 
 
+inputAll = document.querySelectorAll("input")
 
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    inputAll.forEach((input) => {
+        if(!input.value)
+        {
+            let error = document.createElement('p')
+            error.innerText = `Le champ ${input.name} doit être rempli`
+            error.classList.add('error-message')
+            input.parentNode.append(error)
+        }
+    })
+})
+
+/* 
 // eventListener submit
 form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -42,3 +58,4 @@ form.addEventListener("submit", (event) => {
         console.error('le mdp est manquant')
     }
 })
+*/
