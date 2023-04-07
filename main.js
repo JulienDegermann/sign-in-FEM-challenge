@@ -13,19 +13,46 @@ const password = document.querySelector('#last-password') // password input
 
 inputAll = document.querySelectorAll("input")
 
-
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    inputAll.forEach((input) => {
-        if(!input.value)
-        {
-            let error = document.createElement('p')
+inputAll.forEach((input) => {
+    // console.log(input)
+    let error = document.createElement('p')
+    error.classList.add('error-message')
+    input.parentNode.append(error)
+    console.log(error)
+    form.addEventListener('submit', (e) => { //add event listener here because can't link errorMessage to external listener
+        e.preventDefault()
+        if(!input.value) {
             error.innerText = `Le champ ${input.name} doit être rempli`
-            error.classList.add('error-message')
-            input.parentNode.append(error)
+        } else {
+            error.innerText = ``
         }
     })
 })
+
+
+
+
+
+
+// form.addEventListener("submit", (event) => {
+//     event.preventDefault()
+//     inputAll.forEach((input) => {
+//         if(!input.value) {
+//             error.innerText = `Le champ ${input.name} doit être rempli`
+//         } else {
+//             error.innerText = ``
+//         }
+//     })
+    // inputAll.forEach((input) => {
+    //     if(!input.value)
+    //     {
+    //         let error = document.createElement('p')
+    //         error.innerText = `Le champ ${input.name} doit être rempli`
+    //         error.classList.add('error-message')
+    //         input.parentNode.append(error)
+    //     }
+    // })
+    // })
 
 /* 
 // eventListener submit
