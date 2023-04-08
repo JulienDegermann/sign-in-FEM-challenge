@@ -11,78 +11,35 @@ const email = document.querySelector('#email') // email input
 const password = document.querySelector('#last-password') // password input
 
 
-inputAll = document.querySelectorAll("input")
 
+// control if input.values are not empty
+inputAll = document.querySelectorAll("input")
 inputAll.forEach((input) => {
     // console.log(input)
-    let error = document.createElement('p')
-    error.classList.add('error-message')
-    input.parentNode.append(error)
-    console.log(error)
-    form.addEventListener('submit', (e) => { //add event listener here because can't link errorMessage to external listener
+    let error = document.createElement('p') // create new <p> called error
+    error.classList.add('error-message') // add .error-message class for css style
+    input.parentNode.append(error) // add the new <p> in HTML after last child's element parent (after this input)
+
+    // add ! mark in input if error
+    let errorMark = document.createElement('p') // create div for adding the mark
+    errorMark.classList.add('error-mark') // add .error-mark class for css style
+    // console.log(errorMark)
+    // input.parentNode.append(errorMark)
+    input.parentNode.append(errorMark)
+    errorMark.style.visibility = 'hidden'
+
+
+
+    // when submit, add error-message content forEach input that has empty value
+    form.addEventListener('submit', (e) => { // add event listener here because can't link errorMessage to external listener
         e.preventDefault()
-        if(!input.value) {
-            error.innerText = `Le champ ${input.name} doit être rempli`
+        if (!input.value) { // if there is no value in the input
+            errorMark.innerText = '!'
+            errorMark.style.visibility = 'visible'
+            error.innerText = `"${input.name}" cannot be empty`// add content in error message
         } else {
-            error.innerText = ``
+            error.innerText = `` // else return erro message empty
+            errorMark.style.visibility = 'hidden'
         }
     })
 })
-
-
-
-
-
-
-// form.addEventListener("submit", (event) => {
-//     event.preventDefault()
-//     inputAll.forEach((input) => {
-//         if(!input.value) {
-//             error.innerText = `Le champ ${input.name} doit être rempli`
-//         } else {
-//             error.innerText = ``
-//         }
-//     })
-    // inputAll.forEach((input) => {
-    //     if(!input.value)
-    //     {
-    //         let error = document.createElement('p')
-    //         error.innerText = `Le champ ${input.name} doit être rempli`
-    //         error.classList.add('error-message')
-    //         input.parentNode.append(error)
-    //     }
-    // })
-    // })
-
-/* 
-// eventListener submit
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    // firstname
-    if (!firstname.value) {
-        let error = document.createElement('p')
-        error.innerText = `Le champ ${firstname.name} doit être rempli`
-        error.classList.add('error-message')
-        firstname.parentNode.append(error)
-    } else {
-        console.error('le prénom est manquant')
-    }
-    // lastname
-    if (lastname.value) {
-        console.log('le nom est rempli')
-    } else {
-        console.error('le nom est manquant')
-    }
-    // email
-    if (email.value) {
-        console.log('le mail est rempli')
-    } else { 
-        console.error('le mail est manquant')
-    }
-    if (password.value) {
-        console.log('le mdp est rempli')
-    } else {
-        console.error('le mdp est manquant')
-    }
-})
-*/
