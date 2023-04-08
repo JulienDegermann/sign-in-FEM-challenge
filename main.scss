@@ -70,7 +70,7 @@ h1 {
 .success {
 
     background: hsl(154, 59%, 51%);
-    box-shadow: hsla(154, 59%, 51%, .5) 0 5px 0;
+    box-shadow: darken(hsla(154, 59%, 51%, 1), 10%) 0 5px 0;
     width: 90%;
     text-transform: uppercase;
     margin: 15px auto;
