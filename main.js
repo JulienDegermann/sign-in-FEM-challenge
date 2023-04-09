@@ -15,16 +15,15 @@ const password = document.querySelector('#last-password') // password input
 
 
 // control if input.values are not empty
-inputAll = document.querySelectorAll("input")
+
+const inputAll = document.querySelectorAll("input")
+
 inputAll.forEach((input) => {
     // console.log(input)
     let error = document.createElement('p') // create new <p> called error
     error.classList.add('error-message') // add .error-message class for css style
     input.parentNode.append(error) // add the new <p> in HTML after last child's element parent (after this input)
 
-    input.addEventListener('focus', () => {
-        input.target.style.border = 'solid green 1px'
-    })
 
     // add ! mark in input if error
     let errorMark = document.createElement('p') // create div for adding the mark
@@ -37,10 +36,8 @@ inputAll.forEach((input) => {
 
 
 
-// function to check email format input
-const checkMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
-
-    // regexMAil.test(input.value) === 'false
+    // function to check email format input
+    const checkMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     // when submit, add error-message content forEach input that has empty value
     form.addEventListener('submit', (e) => { // add event listener here because can't link errorMessage to external listener

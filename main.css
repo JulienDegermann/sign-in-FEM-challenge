@@ -20,7 +20,7 @@ body {
   background: hsl(249, 10%, 26%);
   /* grayish blue */
   /* background: hsl(246, 25%, 77%); */
-  background: hsl(0, 100%, 74%);
+  background: url("images/bg-intro-desktop.png") repeat, hsl(0, 100%, 74%);
   font-family: "Poppins", sans-serif;
   color: white;
   font-weight: 400;
@@ -32,6 +32,10 @@ button {
   padding: 20px 30px;
   width: 100%;
   border-radius: 7.5px;
+  transition: background linear 0.25s;
+}
+button:hover {
+  cursor: pointer;
 }
 
 header {
@@ -63,6 +67,10 @@ h1 {
   font-weight: 400;
   padding: 20px 80px;
 }
+.try:hover {
+  background: #7e75b8;
+  transition: background linear 0.25s;
+}
 
 .try a {
   font-weight: 700;
@@ -80,6 +88,10 @@ h1 {
   text-transform: uppercase;
   margin: 15px auto;
   padding: 20 80px;
+}
+.success:hover {
+  background: #61d6a3;
+  transition: background linear 0.25s;
 }
 
 form {
@@ -173,6 +185,7 @@ label {
     max-width: 1200px;
     margin: auto;
     gap: 0;
+    background: url("images/bg-intro-mobile.png") repeat, hsl(0, 100%, 74%);
   }
   header,
   main {
